@@ -9,6 +9,7 @@
         <script src="js/lib/angular.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/controllers/fotos-controller.js"></script>
+        <script src="js/directives/minhas-diretivas.js"></script>
     </head>
     <body ng-controller="FotosController">
         <div class="container">
@@ -18,14 +19,11 @@
             </div>
             
             <!--Painel fotos-->
-            <div  ng-repeat="foto in fotos" class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">{{foto.titulo}}</h3>
-                </div>
+            <meu-painel ng-repeat="foto in fotos" titulo="{{foto.titulo}}">
                 <div class="panel-body">
                     <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
                 </div>
-            </div>
+            </meu-painel>
             <!--Fim Painel fotos-->
         
         </div> <!-- fim container -->        

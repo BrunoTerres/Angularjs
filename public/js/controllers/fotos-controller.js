@@ -1,6 +1,24 @@
 angular.module('alurapic').controller('FotosController', function($scope, $http){
 
     $scope.fotos = [];
+    
+
+    $http.get('v1/fotos')
+    .success(function(retorno){
+        $scope.fotos = retorno;
+    }).error(function(erro){
+        console.log(erro)
+    })
+
+
+
+});    
+    
+
+
+
+/*
+    $scope.fotos = [];
 
     $http.get('v1/fotos')
     .success(function(fotos) {
@@ -11,9 +29,10 @@ angular.module('alurapic').controller('FotosController', function($scope, $http)
     })
 
 
-    /*
+    
+    
     //Puxando imagem do DB usando promisse explicitamente 
-    var promisse = $http.get('/v1/fotos');
+    var promisse = $http.get('/v1/fotos')
     promisse.then(function(retorno){
         $scope.fotos = retorno.data;
     }).catch(function(error){
@@ -36,6 +55,5 @@ angular.module('alurapic').controller('FotosController', function($scope, $http)
             url: 'https://programadoresbrasil.com.br/wp-content/uploads/2020/07/nasa-registra-foto-do-sol-mais-proxima-ja-feita-na-historia.jpg'
         }
     ];
-    */
-
-});
+   
+ */
