@@ -26,7 +26,7 @@ angular.module('alurapic').controller('FotoController', function($scope, $http, 
         if ($scope.formulario.$valid) {
             if ($scope.foto._id) {
 
-                recursoFoto.update({fotoId : $scope.foto._id})
+                recursoFoto.update({fotoId : $scope.foto._id}, $scope.foto, )
                 $http.put('v1/fotos/' + $scope.foto._id, $scope.foto)
                 .success(function() {
                     $scope.mensagem = "A foto " + $scope.foto.titulo + "foi alterada com sucesso!";
