@@ -2,7 +2,9 @@
     <h1>{{foto.titulo}}</h1>
 </div>
 
-<p bg-show="mensagem.length" ckass="alert alert-info">{{mensagem}}</p>
+<p class="alert alert-info" ng-show="mensagem.length">
+	{{mensagem}}
+</p>
 
 <form novalidate name="formulario" class="row" ng-submit="submeter()">
     <div class="col-md-6">
